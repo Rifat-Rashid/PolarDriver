@@ -48,6 +48,20 @@ public class CustomView extends View {
 
     public String speedActive = "0";
     public String distanceActive = "0";
+
+    public void setCreditActive(String creditActive) {
+        this.creditActive = creditActive;
+
+    }
+
+    public void setSpeedActive(String speedActive) {
+        this.speedActive = speedActive;
+    }
+
+    public void setDistanceActive(String distanceActive) {
+        this.distanceActive = distanceActive;
+    }
+
     public String creditActive = "0";
 
 

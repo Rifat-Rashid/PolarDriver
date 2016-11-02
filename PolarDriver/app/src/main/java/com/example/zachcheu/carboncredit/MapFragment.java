@@ -87,7 +87,7 @@ public class MapFragment extends Fragment implements LocationListener {
             }
         });
 
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 150, 1, this);
        // setTextLocation(custom);
         return rootView;
     }
@@ -153,7 +153,14 @@ public class MapFragment extends Fragment implements LocationListener {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                if(location.hasSpeed()){
+                    customView.setSpeedActive(String.valueOf((int) (temp.getSpeed() * 2.2369)));
+                    customView.invalidate();
 
+                }else{
+                    customView.setSpeedActive("0");
+                    customView.invalidate();
+                }
                 //if (location.hasSpeed())
                     //texter.setText(String.valueOf((int) (temp.getSpeed() * 2.2369)) + " mph");
                // else
